@@ -13,7 +13,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          HEllo React
+          Krunal Dhorajiya
         </a>
       </header>
     </div>

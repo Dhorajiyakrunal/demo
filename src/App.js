@@ -17,7 +17,7 @@ function App(){
   
   let onclickevent =() =>{
     let cardetails = new car('krunal','dk@gmail.com',1234,'BMW')
-    // console.log(studentdetails.passout);
+    // console.log(cardetails.passout);
     console.info(cardetails)
   }
   

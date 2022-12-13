@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import data from './data.json';
 
 function App() {
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,6 +19,19 @@ function App() {
           Krunal Dhorajiya
         </a>
       </header>
+      {/* <table>
+        <tr>
+          <th>colour</th>
+          <th>value</th>
+        </tr>
+      </table> */}
+        {data.map((i) =>{
+          return (
+            <div key={Math.random()} >
+              colour :- {i.color} <br/>
+              colour code :- {i.value}
+            </div>
+          )})}
     </div>
   );
 }

@@ -4,6 +4,8 @@ import data from './data.json';
 
 function App() {
 
+  const filter = data.filter((i)=> i.id !=2)
+
 
   return (
     <div className="App">
@@ -19,19 +21,24 @@ function App() {
           Krunal Dhorajiya
         </a>
       </header>
-      {/* <table>
-        <tr>
-          <th>colour</th>
-          <th>value</th>
-        </tr>
-      </table> */}
-        {data.map((i) =>{
+      <tbody>
+       <table border={1}>
+          <tr>
+            <th>Id</th>
+            <th>Colour</th>
+            <th>Value</th>
+          </tr>
+        {filter.map((i) => {
           return (
-            <div key={Math.random()} >
-              colour :- {i.color} <br/>
-              colour code :- {i.value}
-            </div>
-          )})}
+            <tr>
+              <td>{i.id}</td>
+              <td>{i.color}</td>
+              <td>{i.value}</td>
+            </tr>
+          )
+        })}
+       </table>
+      </tbody>
     </div>
   );
 }

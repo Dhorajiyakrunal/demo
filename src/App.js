@@ -1,39 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import data from './data.json';
 
-function App(){
-
-  class student {
-    constructor(name,email,password) {
-      this.name = name
-      this.email = email
-      this.password = password
-    }
-    passout()
-    {
-      console.log(`This name ${this.name} And email ${this.email} And password ${this.password}`);
-    }
-  }
-  
-  let onclickevent =() =>{
-    let cardetails = new car('krunal','dk@gmail.com',1234,'BMW')
-    // console.log(studentdetails.passout);
-    console.info(cardetails)
-  }
-  
-  class car extends student{
-    constructor(name,email,password,car){
-      super(name,email,password,car)
-        this.car = car;
-    }
-  }
+function App() {
 
 
-  
-  
   return (
     <div className="App">
-      <header className="App-header" onClick={onclickevent}>
+      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>React</p>
         <a
@@ -41,10 +15,22 @@ function App(){
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-          >
+        >
           Krunal Dhorajiya
         </a>
       </header>
+      {/* <table>
+        <tr>
+          <th>colour</th>
+          <th>value</th>
+        </tr>
+      </table> */}
+        {data.map((i) =>{
+          return (
+            <div key={Math.random()} >
+              colour {i.color}
+            </div>
+          )})}
     </div>
   );
 }

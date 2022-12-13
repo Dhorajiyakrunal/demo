@@ -28,7 +28,8 @@ function App() {
         {data.map((i) =>{
           return (
             <div key={Math.random()} >
-              colour {i.color}
+              colour :- {i.color} <br/>
+              colour code :- {i.value}
             </div>
           )})}
     </div>

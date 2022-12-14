@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+tr,th,td{
+  background-color: #61dafb;
+  border:1px solid black;
+}
+table{
+  border:1px solid black;
+}
+tbody{
+  border: 1px solid #282c34;
+}

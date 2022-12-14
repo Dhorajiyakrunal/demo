@@ -64,7 +64,7 @@ function App() {
         </a>
       </header>
       <tbody>
-        <table border={1}>
+        <table cellPadding={0}cellSpacing={0}>
           <tr>
             <th>Id</th>
             <th>Colour</th>

@@ -4,49 +4,77 @@ import data from './data.json';
 
 function App() {
 
-  const array1 =[
+  const array =  [
     {
-      "id": "1",
+      "id": 1,
       "color": "red",
       "value": "#f00"
     },
     {
-      "id": "2",
+      "id": 2,
       "color": "green",
       "value": "#0f0"
     },
     {
-      "id": "3",
+      "id": 3,
       "color": "blue",
       "value": "#00f"
-    }
-  ]
-
-  const array2 =[
+    },
     {
-      "id": "4",
+      "id": 4,
       "color": "cyan",
       "value": "#0ff"
     },
     {
-      "id": "5",
+      "id": 5,
       "color": "magenta",
       "value": "#f0f"
     },
     {
-      "id": "6",
+      "id": 6,
       "color": "yellow",
       "value": "#ff0"
     },
     {
-      "id": "7",
+      "id": 7,
       "color": "black",
       "value": "#000"
     }
   ]
 
-  // const filter = data.filter((i) => i.id != 2)
-  const array = [...array1,...array2]
+
+  //for loop Thi Reduce
+
+  // let sum = 0;
+  // for (const i of array)
+  // {
+  //   // sum  = sum + i.id;
+  //   sum = sum + i.id 
+  // }
+  // console.log(sum);
+
+
+//reduce method thi reduce
+// const total = array.reduce((acc,curr)=>{
+//   return acc + curr.id
+// },0)
+// console.log(total);
+
+// distructure 
+
+// const [name,age,education,...collageandid] = ['krunal',19,12,'bmu',6965]
+// console.log(collageandid);
+
+const {name,age,eduction,...id}={
+  name:'krunal',
+  age : 18,
+  eduction : 12,
+  collage : 'bmu',
+  id : 6965
+}
+
+console.log(id);
+
 
 
   return (
@@ -63,24 +91,7 @@ function App() {
           Krunal Dhorajiya
         </a>
       </header>
-      <tbody>
-        <table cellPadding={0}cellSpacing={0}>
-          <tr>
-            <th>Id</th>
-            <th>Colour</th>
-            <th>Value</th>
-          </tr>
-          {array.map((i) => {
-            return (
-              <tr>
-                <td>{i.id}</td>
-                <td>{i.color}</td>
-                <td>{i.value}</td>
-              </tr>
-            )
-          })}
-        </table>
-      </tbody>
+      {/* <div>my name {name} my education is {education} and my  age is {age}</div> */}
     </div>
   );
 }

@@ -62,22 +62,20 @@ function App() {
 
 // distructure 
 
-// const [name,age,education,...collageandid] = ['krunal',19,12,'bmu',6965]
+const [name,age,education,...collageandid] = ['krunal',19,12,'bmu',6965]
 // console.log(collageandid);
 
-const {name,age,eduction,...id}={
-  name:'krunal',
-  age : 18,
-  eduction : 12,
-  collage : 'bmu',
-  id : 6965
-}
+// const {name,age,eduction,...id}={
+//   name:'krunal',
+//   age : 18,
+//   eduction : 12,
+//   collage : 'bmu',
+//   id : 6965
+// }
 
-console.log(id);
+// console.log(id);
 
-
-
-  return (
+return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -91,7 +89,7 @@ console.log(id);
           Krunal Dhorajiya
         </a>
       </header>
-      {/* <div>my name {name} my education is {education} and my  age is {age}</div> */}
+      <div>my name {name} my education is {education} and my  age is {age}</div>
     </div>
   );
 }

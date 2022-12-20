@@ -1,95 +1,194 @@
 import logo from './logo.svg';
 import './App.css';
 import data from './data.json';
+import Home from "./home";
 
 function App() {
 
-  const array =  [
+  const MedicineData =
+    [
+      {
+        id: 101,
+        name: 'Abacavir',
+        quantity: 25,
+        price: 150,
+        expiry: 2022,
+        status: true
+      },
+      {
+        id: 102,
+        name: 'Eltrombopag',
+        quantity: 90,
+        price: 550,
+        expiry: 2021,
+        status: true
+      },
+      {
+        id: 103,
+        name: 'Meloxicam',
+        quantity: 85,
+        price: 450,
+        expiry: 2025,
+        status: false
+      },
+      {
+        id: 104,
+        name: 'Allopurinol',
+        quantity: 50,
+        price: 600,
+        expiry: 2023,
+        status: true
+      },
+      {
+        id: 105,
+        name: 'Phenytoin',
+        quantity: 63,
+        price: 250,
+        expiry: 2021,
+        status: false
+      }
+    ];
+  const employedata = [
     {
-      "id": 1,
-      "color": "red",
-      "value": "#f00"
+      name: 'amit',
+      age: 35,
+      salary: 40000,
+      bonus: 1000,
+      status: true
     },
     {
-      "id": 2,
-      "color": "green",
-      "value": "#0f0"
+      name: 'ajay',
+      age: 25,
+      salary: 38000,
+      bonus: 2000,
+      status: false
     },
     {
-      "id": 3,
-      "color": "blue",
-      "value": "#00f"
+      name: 'mayur',
+      age: 23,
+      salary: 50000,
+      bonus: 500,
+      status: true
     },
     {
-      "id": 4,
-      "color": "cyan",
-      "value": "#0ff"
+      name: 'jay',
+      age: 29,
+      salary: 35000,
+      bonus: 600,
+      status: true
     },
     {
-      "id": 5,
-      "color": "magenta",
-      "value": "#f0f"
-    },
-    {
-      "id": 6,
-      "color": "yellow",
-      "value": "#ff0"
-    },
-    {
-      "id": 7,
-      "color": "black",
-      "value": "#000"
+      name: 'raj',
+      age: 33,
+      salary: 22000,
+      bonus: 2000,
+      status: true
     }
   ]
 
 
-  //for loop Thi Reduce
 
-  // let sum = 0;
-  // for (const i of array)
-  // {
-  //   // sum  = sum + i.id;
-  //   sum = sum + i.id 
-  // }
-  // console.log(sum);
+  const filter = MedicineData.filter((i) => i.expiry === 2021)
+  const filter2 = employedata.filter((i) => i.age <= 30)
 
 
-//reduce method thi reduce
-// const total = array.reduce((acc,curr)=>{
-//   return acc + curr.id
-// },0)
-// console.log(total);
+  let reducedata = [...MedicineData, ...employedata]
 
-// distructure 
 
-const [name,age,education,...collageandid] = ['krunal',19,12,'bmu',6965]
-// console.log(collageandid);
-
-// const {name,age,eduction,...id}={
-//   name:'krunal',
-//   age : 18,
-//   eduction : 12,
-//   collage : 'bmu',
-//   id : 6965
-// }
-
-// console.log(id);
-
-return (
+  return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>React</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Krunal Dhorajiya
-        </a>
+        <tbody>
+          <table  cellPadding={10}>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>quantity</th>
+              <th>price</th>
+              <th>expiry</th>
+              <th>status</th>
+            </tr>
+            {MedicineData.map((i) => {
+              return <tr key={Math.random()}>
+                <td>{i.id}</td>
+                <td>{i.name}</td>
+                <td>{i.quantity}</td>
+                <td>{i.price}</td>
+                <td>{i.expiry}</td>
+                <td>{i.status}</td>
+              </tr>
+            })}
+          </table>
+        </tbody>
+        <br />
+        <br />
+        <tbody>
+          <table cellPadding={10}>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Salary</th>
+              <th>Bonus</th>
+              <th>Status</th>
+            </tr>
+            {employedata.map((i) => {
+              return <tr key={Math.random()}>
+                <td>{i.name}</td>
+                <td>{i.age}</td>
+                <td>{i.salary}</td>
+                <td>{i.bonus}</td>
+                <td>{i.status}</td>
+              </tr>
+            })}
+          </table>
+        </tbody>
+        <br />
+        <br />
+        <tbody>
+          <table cellPadding={5}>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>quantity</th>
+              <th>price</th>
+              <th>expiry</th>
+              <th>status</th>
+            </tr>
+            {filter.map((i) => {
+              return <tr key={Math.random()}>
+                <td>{i.id}</td>
+                <td>{i.name}</td>
+                <td>{i.quantity}</td>
+                <td>{i.price}</td>
+                <td>{i.expiry}</td>
+                <td>{i.status}</td>
+              </tr>
+            })}
+          </table>
+        </tbody>
+        <br />
+        <br />
+        <tbody>
+          <table cellPadding={5}>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Salary</th>
+              <th>Bonus</th>
+              <th>Status</th>
+            </tr>
+            {filter2.map((i) => {
+              return <tr key={Math.random()}>
+                <td>{i.name}</td>
+                <td>{i.age}</td>
+                <td>{i.salary}</td>
+                <td>{i.bonus}</td>
+                <td>{i.status}</td>
+              </tr>
+            })}
+          </table>
+        </tbody>
       </header>
-      <div>my name {name} my education is {education} and my  age is {age}</div>
     </div>
   );
 }

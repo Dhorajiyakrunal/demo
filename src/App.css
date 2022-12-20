@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,14 @@
   color: #61dafb;
 }
 
+body{
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #20262e;
+  background-color: #28b1de;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,13 +45,34 @@
   }
 }
 
-tr,th,td{
-  background-color: #61dafb;
-  border:1px solid black;
+tr:nth-child(even){
+  background-color: rgb(46, 53, 62);
+  color: aliceblue;
 }
-table{
-  border:1px solid black;
+tr{
+  background-color: #20262e;
+
+  color: aliceblue;
+  font-size: 20px;
 }
-tbody{
-  border: 1px solid #282c34;
+
+th{
+  background-color: #20262e;
+  color:  #28b1de;
+  text-transform: capitalize;
 }
+
+/* 
+th:nth-child(2){
+  background-color: #25c3ef;
+  color: aliceblue; 
+}
+th:nth-child(4){
+  background-color: #25c3ef;
+  color: aliceblue; 
+}
+th:nth-child(6){
+  background-color: #25c3ef;
+  color: aliceblue; 
+} */
+

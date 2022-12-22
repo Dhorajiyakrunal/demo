@@ -1,13 +1,14 @@
 import React from 'react'
 
 const home = (props) => {
+  console.log("id", props.data);
 
-  // console.log(medicin.MedicineData.name);
   return (
     <div>
-      home Pages
+      home = {props.data.name}
     </div>
   )
+
 }
 
 export default home

@@ -7,7 +7,7 @@ export default class about extends Component {
     return (
       <div>
         id =  {this.props.data.id}<br/>
-        <Home data={data}  />
+        <Home data={this.data}  />
       </div>
     )
   }

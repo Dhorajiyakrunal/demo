@@ -4,56 +4,38 @@ import './App.css';
 import { useState } from 'react';
 import About from './pages/about';
 import Home from './pages/home';
-function App() {
+import React, { Component } from 'react'
 
-  const data={
-      "id":"1",
-      "color":"red",
-      "value":"#f00"
+
+export default class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      name: "krunal",
+      email: "kd@gmail.com",
+      phone: 9879672033,
+      student: {
+        name: "admin",
+        email: "admin@gamil.com",
+        phone: 8799693691
+      },
+      isvaild : true
     }
-    // {
-    //   "id": "2",
-    //   "color": "green",
-    //   "value": "#0f0"
-    // },
-    // {
-    //   "id": "3",
-    //   "color": "blue",
-    //   "value": "#00f"
-    // }
-  
-
-  // const onclickstate = () => {
-  //   //  setAdd(add + 1)
-
-    
-  //   setArray(array)
-  //   // console.log(obj2);
-  // }
-
-  // const 
-
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        {/* Plus {add} */}
-        {/* Color is {obj.color} */}
-        {/* {array.map((i)=>{
-          return <div>
-            color is {i.color}
-          </div>
-        })} 
-        <button onClick={onclickstate}>+</button> */}
-        <About data={data}/>
-        {/* <Home data={data} color="color"/> */}
-      </header>
-    </div>
-  );
-
-
-
-
+  }
+  render() {
+    const onclickhandler=()=>{
+      this.setState({name : "rushubh",email :'rs@gmail.com',phone:59595959,student:{name:"admin2"},isvaild : this.state.isvaild ?false : true })
+    }
+    return (
+    <div className='App'>
+        Name is {this.state.name} <br/>
+        email is {this.state.email} <br/>
+        phone is {this.state.phone}<br/>
+        student name is {this.state.student.name}<br/>
+        isvaild {this.state.isvaild ? 'yes' : 'no'}
+        {/* student name = {this.state.student.name} */}
+        <button onClick={onclickhandler}>Click</button>
+      </div>
+    )
+  }
 }
-
-export default App;

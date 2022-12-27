@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  /* background-color: #282c34; */
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,13 +28,14 @@
   color: #61dafb;
 }
 
-/* body{
+body{
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
   line-height: 1.6;
   color: #20262e;
-  background-color: #28b1de;
-} */
+  /* background-color: #28b1de; */
+  text-align: center;
+}
 
 @keyframes App-logo-spin {
   from {

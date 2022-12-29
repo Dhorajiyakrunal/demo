@@ -1,74 +1,43 @@
-// // import logo from './logo.svg';
-// // import './App.css';
-// // // import data from './data.json';
-// // import About from './pages/about';
-// // import Home from './pages/home';
-// import React, { useEffect, useState } from 'react'
+import React, { Component } from 'react'
 
-// export const App = () => {
+export default class App extends Component {
 
-//   const [name, setName] = useState('admin')
+  componentWillMount (){
+    console.log("Code Checking Run Run");
+    this.setState({count : this.state.count +1})
+  }
 
-//   useEffect(()=>{
-//     alert('run');
-//     setName('admin2')
-//   },[])
-
-//   // useEffect((),[])
+  // componentDidUpdate(){
+  //   console.log("Update run");
+  // }
 
 
-//   return (
-//     <div>
-//       name is {name}
-//     </div>
-//   )
-// }
+  componentDidUpdate(prevProps,prevState){
+    console.log("Upadte Checking");
+    if(prevState.count !== this.state.count){
+      this.setState({data :"Hii"})
+    }
+  }
+  
+  constructor(props){
+    super(props);
+    console.log("run");
+    this.state = {
+      count : 1,
+      data : null
+    }
+  }
 
+  onclickupdate=()=>{
+    this.setState({count : this.state.count +1})
+  }
 
-// export default App
-
-
-//updating
-
-// import React,{ useEffect,useState } from "react";
-
-// export default function App() {
-
-//   const [name , setName] = useState('krunal')
-//   useEffect(()=>{
-//   },[name])
-
-
-//   return (
-//     <div>
-//       name is {name}
-//       <button onClick={()=>setName('admin')}>Submit</button>
-//     </div>
-//   )
-// }
-
-
-// unmounting
-
-// import React,{ useEffect, useState } from 'react'
-
-
-// export default function App() {
-
-//   const [name, setName] = useState()
-
-//   useEffect(() => {
-//     return () => {
-//       alert("Are you sure")
-//     }
-//   }, [])
-
-//   return (
-//     <div>
-//       name is {name}
-//       <button onClick={() => setName('admin')}>Submit</button>
-//     </div>
-//   )
-// }
-
-
+  render() {
+    return (
+      <div>
+       Number is {this.state.count}
+       <button onClick={this.onclickupdate}>Upadate</button>
+      </div>
+    )
+  }
+}

@@ -1,43 +1,42 @@
-import React, { Component } from 'react'
+import React, {useState } from 'react'
 
-export default class App extends Component {
+export const App = () => {
+  return (
+    <div className='hocred'>
+      <Hocred component={Counter}/>
+    </div>
+  )
+}
 
-  componentWillMount (){
-    console.log("Code Checking Run Run");
-    this.setState({count : this.state.count +1})
-  }
+export const Hocred = (props) => {
+  return (
+    <div style={{backgroundColor:'red'}}>
+      <h1 >Hocred</h1>
+      <props.component/>
+    </div>
+  )
+}
 
-  // componentDidUpdate(){
-  //   console.log("Update run");
-  // }
 
 
-  componentDidUpdate(prevProps,prevState){
-    console.log("Upadte Checking");
-    if(prevState.count !== this.state.count){
-      this.setState({data :"Hii"})
-    }
+export default App
+
+const Counter = () => {
+  const [count, setCount] = useState(0)
+
+  const onclickhandl =()=>{
+    setCount (count + 1)
   }
   
-  constructor(props){
-    super(props);
-    console.log("run");
-    this.state = {
-      count : 1,
-      data : null
-    }
-  }
-
-  onclickupdate=()=>{
-    this.setState({count : this.state.count +1})
-  }
-
-  render() {
-    return (
-      <div>
-       Number is {this.state.count}
-       <button onClick={this.onclickupdate}>Upadate</button>
-      </div>
-    )
-  }
+  return (
+    <div>
+      this is {count}
+      <button onClick={onclickhandl}>Button</button>
+    </div>
+  )
 }
+
+
+
+
+

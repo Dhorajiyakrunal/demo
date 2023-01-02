@@ -5,7 +5,7 @@ const home = (props) => {
 
   return (
     <div>
-      home = {props.data.color}
+      
     </div>
   )
 

@@ -6,8 +6,6 @@ export default class about extends Component {
     // console.log(this.id);
     return (
       <div>
-        id =  {this.props.data.id}<br/>
-        <Home data={this.data}  />
       </div>
     )
   }

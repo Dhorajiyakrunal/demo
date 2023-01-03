@@ -1,40 +1,34 @@
-import React, {useState } from 'react'
+import React from 'react'
+import { Link, Route, Routes } from 'react-router-dom'
+import Home from './pages/home'
+import Department from './pages/departments'
+import Doctors from './pages/doctors'
+import About from './pages/about'
+import Contact from './pages/contect'
+import Header from './component/header'
+import Appotment from './pages/appotment'
+import Footer from './component/footer'
 
-export const App = () => {
-  return (
-    <div className='hocred'>
-      <Hocred component={Counter}/>
-    </div>
-  )
-}
-
-export const Hocred = (props) => {
-  return (
-    <div style={{backgroundColor:'red'}}>
-      <h1 >Hocred</h1>
-      <props.component/>
-    </div>
-  )
-}
-
-
-
-export default App
-
-const Counter = () => {
-  const [count, setCount] = useState(0)
-
-  const onclickhandl =()=>{
-    setCount (count + 1)
-  }
-  
+const App = () => {
   return (
     <div>
-      this is {count}
-      <button onClick={onclickhandl}>Button</button>
+      <Header/>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/department' element={<Department/>}/>
+        <Route path='/doctors' element={<Doctors/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/appotment' element={<Appotment/>}/>
+      </Routes>
+      <Footer/>
     </div>
+
+
   )
 }
+
+export default App
 
 
 

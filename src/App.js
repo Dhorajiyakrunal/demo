@@ -1,36 +1,30 @@
 import React from 'react'
-import { Link, Route,Routes } from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom'
 import Home from './pages/home'
+import Department from './pages/departments'
+import Doctors from './pages/doctors'
 import About from './pages/about'
-// import Button from 'react-bootstrap/Button';
-import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Alert from 'react-bootstrap/Alert';
-
+import Contact from './pages/contect'
+import Header from './component/header'
+import Appotment from './pages/appotment'
+import Footer from './component/footer'
 
 const App = () => {
   return (
-    <div className='app'>
-      <div className='d-flex'>
-        <div className='logo'>
-          <h1>LOGO</h1>
-        </div>
-        <nav>
-          <ul className='d-flex mx-2'>
-            <li className='me-5'><Link>Home</Link></li>
-            <li>About</li>
-          </ul>
-        </nav>
-        <Alert  variant='success'>
-          This is a  alert—check it out!
-        </Alert>
-        <Button>Toggle</Button>
-      </div>
+    <div>
+      <Header/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/department' element={<Department/>}/>
+        <Route path='/doctors' element={<Doctors/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/appotment' element={<Appotment/>}/>
       </Routes>
+      <Footer/>
     </div>
+
+
   )
 }
 

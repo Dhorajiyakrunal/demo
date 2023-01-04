@@ -1,30 +1,20 @@
-import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
-import Home from './pages/home'
-import Department from './pages/departments'
-import Doctors from './pages/doctors'
-import About from './pages/about'
-import Contact from './pages/contect'
-import Header from './component/header'
-import Appotment from './pages/appotment'
-import Footer from './component/footer'
+import React, { useState, useEffect } from "react";
 
-const App = () => {
+
+function App() {
+
+  const [count, setcount] = useState(1)
+
+  useEffect(() => {
+
+  }, [count])
+
   return (
-    <div>
-      <Header/>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/department' element={<Department/>}/>
-        <Route path='/doctors' element={<Doctors/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/appotment' element={<Appotment/>}/>
-      </Routes>
-      <Footer/>
+    <div className="App">
+      {count}
+      <button onClick={()=>setcount(count + 1)}>+</button>
+      <button onClick={()=>setcount(count - 1)}>-</button>
     </div>
-
-
   )
 }
 

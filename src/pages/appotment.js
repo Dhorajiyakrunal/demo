@@ -1,6 +1,16 @@
 import React from 'react'
 
 const appotment = () => {
+    // const onsubmithnadle =(event)=>{
+    //     event.preventDefault()
+    //     console.log("Check run ",event);
+    // }
+
+    const onclickhandle=(event)=>{
+        console.log("Check Run Run",event.target.value);
+    }
+
+    
     return (
         <div>
             <section id="appointment" className="appointment">
@@ -11,7 +21,7 @@ const appotment = () => {
                             blandit quam volutpat sollicitudin. Fusce tincidunt sit amet ex in volutpat. Donec lacinia finibus tortor.
                             Curabitur luctus eleifend odio. Phasellus placerat mi et suscipit pulvinar.</p>
                     </div>
-                    <form action method="post" role="form" className="php-email-form">
+                    <form    className="php-email-form">
                         <div className="row">
                             <div className="col-md-4 form-group">
                                 <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -50,7 +60,7 @@ const appotment = () => {
                             <div className="error-message" />
                             <div className="sent-message">Your appointment request has been sent successfully. Thank you!</div>
                         </div>
-                        <div className="text-center"><button type="submit">Make an Appointment</button></div>
+                        <div className="text-center"><button onClick={onclickhandle} type="submit" >Make an Appointment</button></div>
                     </form>
                 </div>
             </section>

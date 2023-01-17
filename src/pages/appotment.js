@@ -1,30 +1,32 @@
 import React from 'react'
+// import {inputRef} from 'react'
 
 const appotment = () => {
-    // const onsubmithnadle =(event)=>{
-    //     event.preventDefault()
-    //     console.log("Check run ",event);
-    // }
 
-    const onclickhandle=(event)=>{
-        console.log("Check Run Run",event.target.value);
+    let inputRef = null
+
+    const onsubmithandler = (event ) => {
+        event.preventDefault();
     }
-
     
-    return (
+    
+    const onclickHndle = () =>{
+        inputRef.style.backgroundColor = "#FF6337"
+    }
+    return ( 
         <div>
             <section id="appointment" className="appointment">
                 <div className="container">
                     <div className="section-title">
-                        <h2>Make an Appointment</h2>
+                        <h2 >Make an Appointment</h2>
                         <p>Aenean enim orci, suscipit vitae sodales ac, semper in ex. Nunc aliquam eget nibh eu euismod. Donec dapibus
                             blandit quam volutpat sollicitudin. Fusce tincidunt sit amet ex in volutpat. Donec lacinia finibus tortor.
                             Curabitur luctus eleifend odio. Phasellus placerat mi et suscipit pulvinar.</p>
                     </div>
-                    <form    className="php-email-form">
+                    <form className="php-email-form" onSubmit={onsubmithandler}>
                         <div className="row">
                             <div className="col-md-4 form-group">
-                                <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <input ref={(node) => {inputRef = node}} type="text" name="name" className="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                                 <div className="validate" />
                             </div>
                             <div className="col-md-4 form-group mt-3 mt-md-0">
@@ -60,7 +62,7 @@ const appotment = () => {
                             <div className="error-message" />
                             <div className="sent-message">Your appointment request has been sent successfully. Thank you!</div>
                         </div>
-                        <div className="text-center"><button onClick={onclickhandle} type="submit" >Make an Appointment</button></div>
+                        <div className="text-center"><button type="submit" onClick={onclickHndle} >Make an Appointment</button></div>
                     </form>
                 </div>
             </section>

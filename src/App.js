@@ -6,6 +6,7 @@ import Doctors from './pages/doctors'
 import About from './pages/about'
 import Contact from './pages/contect'
 import Appotment from './pages/appotment'
+import Login from './pages/login'
 import Layout from './component/layout'
 import './App.css';
 
@@ -19,12 +20,20 @@ const App = () => {
         <Route path='/about' element={<Layout><About /></Layout>} />
         <Route path='/contact' element={<Layout><Contact /></Layout>} />
         <Route path='/appotment' element={<Appotment />} />
+        <Route path='/login' element={<Login/>}/>
       </Routes>
     </div>
   )
 }
-
 export default App
+
+
+
+
+
+
+
+
 
 
 

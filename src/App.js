@@ -8,7 +8,7 @@ import Contact from './pages/contect'
 import Appotment from './pages/appotment'
 import Login from './pages/login'
 import Layout from './component/layout'
-import './App.css';
+
 
 const App = () => {
   return (

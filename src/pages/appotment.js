@@ -5,15 +5,15 @@ const appotment = () => {
 
     let inputRef = null
 
-    const onsubmithandler = (event ) => {
+    const onsubmithandler = (event) => {
         event.preventDefault();
     }
-    
-    
-    const onclickHndle = () =>{
+
+
+    const onclickHndle = () => {
         inputRef.style.backgroundColor = "#FF6337"
     }
-    return ( 
+    return (
         <div>
             <section id="appointment" className="appointment">
                 <div className="container">
@@ -26,7 +26,7 @@ const appotment = () => {
                     <form className="php-email-form" onSubmit={onsubmithandler}>
                         <div className="row">
                             <div className="col-md-4 form-group">
-                                <input ref={(node) => {inputRef = node}} type="text" name="name" className="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <input ref={(node) => { inputRef = node }} type="text" name="name" className="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                                 <div className="validate" />
                             </div>
                             <div className="col-md-4 form-group mt-3 mt-md-0">

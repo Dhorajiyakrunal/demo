@@ -8,7 +8,7 @@ import '../App.css'
 function login() {
 
     const schema = yup.object().shape({
-        email: yup.string().email().required(),
+        email:  yup.string().email().required(),
         password: yup.string().required(),
     });
     return (

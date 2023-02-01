@@ -38,10 +38,13 @@ function header() {
                         </ul>
                         <i className="bi bi-list mobile-nav-toggle" />
                     </nav>
-                    <Link to="/Appotment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an</span>
+                    <Link to="/appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an </span>
                         Appointment</Link>
                     <Link to="/login" className="appointment-btn scrollto">
                         <span className="d-none d-md-inline">Login/ Signup</span>
+                    </Link>
+                    <Link to="/dform" className="d-flex justify-content-between appointment-btn scrollto">
+                        <span className="d-none d-md-inline">Doctors Application</span>
                     </Link>
                 </div>
             </header>

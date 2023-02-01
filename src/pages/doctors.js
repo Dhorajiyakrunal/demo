@@ -21,7 +21,7 @@ const doctors = () => {
                     </div>
                     {doctor.map((i) => {
                         return (
-                            <div className="row ">
+                            <div className="row">
                                 <div className="col-lg-6">
                                     <div className="member d-flex align-items-start">
                                         <div className="pic"><img src={i.img} className="img-doctor" alt /></div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const contect = () => {
+const Contect = () => {
 
     const onSubmithandle=(event)=>{
         console.log("run ",event.target.value);
@@ -68,4 +68,4 @@ const contect = () => {
     )
 }
 
-export default contect
+export default Contect

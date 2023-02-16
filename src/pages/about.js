@@ -1,19 +1,60 @@
 import React from 'react'
+import data from './Data.json'
+import BootstrapTable from 'react-bootstrap-table-next';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+import paginationFactory from 'react-bootstrap-table2-paginator';
+// import Pagination from 'react-bootstrap/Pagination';
+// import BootstrapTable from 'react-bootstrap-table-next';
+import '../App.css'
 
-const about = () => {
+
+const About = () => {
+
+  const Data = data
+  console.log('data', Data);
+
+
+
+  const columns = [
+    {
+      dataField: 'id',
+      text: 'Id',
+      sort: true,
+      filter: textFilter()
+    },
+    {
+      dataField: 'name',
+      text: 'Name',
+      filter: textFilter()
+
+    }
+
+  ]
+
+
+  const options = {
+    onSizePerPageChange: (sizePerPage, page) => {
+      console.log('Size per page change!!!');
+      console.log('Newest size per page:' + sizePerPage);
+      console.log('Newest page:' + page);
+    },
+    onPageChange: (page, sizePerPage) => {
+      console.log('Page change!!!');
+      console.log('Newest size per page:' + sizePerPage);
+      console.log('Newest page:' + page);
+    }
+  };
+  
+
+
   return (
     <div>
       <section id="about" className="about">
         <div className="container">
           <div className="row">
             <div className="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center px-lg-5 abouttop">
-              <h3>Fusce nec risus at enim congue bibendum quis at augue. </h3>
-              <p>Proin tincidunt blandit fermentum. Ut gravida arcu non mi dapibus ullamcorper. Curabitur mollis, turpis eu
-                pellentesque finibus, nisi ex mattis quam, mollis aliquet mi massa non nunc. Pellentesque id felis elit.
-                Pellentesque blandit sem a nisi dictum, in pretium ante tincidunt.</p>
-              <p>Maecenas lobortis, nunc eu porttitor posuere, neque lectus rutrum leo, sit amet rutrum orci eros aliquam
-                mauris. Aliquam erat volutpat. Aenean eget dui ac lectus rutrum aliquam pulvinar ut massa. Duis sagittis
-                rutrum neque, quis tincidunt arcu pretium ac. Suspendisse sem </p>
+              <h3>Table</h3>
+              <BootstrapTable keyField='id' data={Data} columns={columns} filter={filterFactory()}  pagination={ paginationFactory()} /> 
             </div>
           </div>
         </div>
@@ -22,4 +63,5 @@ const about = () => {
   )
 }
 
-export default about
+export default About
+

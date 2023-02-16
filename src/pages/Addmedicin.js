@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
 
+
 const Addmedicin = ({display1,setdisplay1}) => {
     const handleClose = () => setdisplay1(false);
 
@@ -51,7 +52,6 @@ const Addmedicin = ({display1,setdisplay1}) => {
                     <Form.Control
                         type="number"
                         placeholder="Enter Medicine Quantity"
-                        autoFocus
                         name='quantity'
                     />
                 </Form.Group>
@@ -60,19 +60,18 @@ const Addmedicin = ({display1,setdisplay1}) => {
                     <Form.Control
                         type="number"
                         placeholder="Enter Medicine Price"
-                        autoFocus
                         name='price'
                     />
                 </Form.Group>
         
-            {/* <Modal.Footer>x */}
+            <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>
                 <button type="submit" className='btn btn-primary'>
                     SUBMIT
                 </button>
-            {/* </Modal.Footer> */}
+            </Modal.Footer>
             </Form>
         </Modal.Body>
     </Modal>

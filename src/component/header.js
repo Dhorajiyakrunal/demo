@@ -1,9 +1,28 @@
-import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 
 
-function header() {
+function Header() {
+
+    const [isLogin, setisLogin] = useState(false)
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!localStorage.getItem('user')) {
+            setisLogin(true)
+        }
+        else {
+            setisLogin(false)
+        }
+    }, [location])
+
+    const onclickLogout = () => {
+        localStorage.removeItem('admin')
+    }
+
+
     return (
         <div><div className="main-header">
             <div id="topbar" className="d-flex align-items-center fixed-top">
@@ -40,9 +59,13 @@ function header() {
                     </nav>
                     <Link to="/appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an </span>
                         Appointment</Link>
-                    <Link to="/login" className="appointment-btn scrollto">
-                        <span className="d-none d-md-inline">Login/ Signup</span>
-                    </Link>
+                    {isLogin === false ?
+                        <Link to="/login" className="appointment-btn scrollto">
+                            <span className="d-none d-md-inline">Login/ Signup</span>
+                        </Link> :
+                        <Link onClick={onclickLogout} to="/login" className="appointment-btn scrollto">
+                            <span className="d-none d-md-inline">Logout</span>
+                        </Link>}
                     <Link to="/dform" className="d-flex justify-content-between appointment-btn scrollto">
                         <span className="d-none d-md-inline">Doctors Application</span>
                     </Link>
@@ -53,4 +76,4 @@ function header() {
     )
 }
 
-export default header
+export default Header

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import '../App.css'
 
 
-const register = () => {
+const Register = () => {
 
     const schema = yup.object().shape({
         fname: yup.string('Name must be Filled in Alphabet').required(),
@@ -94,4 +94,4 @@ const register = () => {
     )
 }
 
-export default register
+export default Register

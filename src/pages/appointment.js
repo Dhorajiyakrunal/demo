@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import '../App.css'
 
 
-const appointment = () => {
+const Appointment = () => {
 
 
     const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -119,4 +119,4 @@ const appointment = () => {
     )
 }
 
-export default appointment
+export default Appointment

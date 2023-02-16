@@ -8,3 +8,6 @@ h2{
     max-width: 100px;
     width: 50px !important;
 }
+#about{
+    height: 350vh;
+}

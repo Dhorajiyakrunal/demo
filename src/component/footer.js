@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const footer = () => {
+export const Footer = () => {
   return (
     <div><footer id="footer">
     <div className="container d-md-flex py-4">
@@ -29,4 +29,4 @@ export const footer = () => {
   )
 }
 
-export default footer;
+export default Footer;

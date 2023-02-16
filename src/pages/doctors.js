@@ -1,14 +1,11 @@
 import React from 'react'
 
-const doctors = () => {
+const Doctors = () => {
 
-    const doctor =
-        [
-            { img: "../assets/img/doctors/doctors-1.jpg", name: "Atha Smith", des: "Chief Medical Officer", par: "Duis sagittis rutrum neque, quis tincidunt arcu pretium ac." },
-            { img: "../assets/img/doctors/doctors-2.jpg", name: "John White", des: "Anesthesiologist", par: "Aenean ac turpis ante. Mauris velit sapien." },
-            { img: "../assets/img/doctors/doctors-3.jpg", name: "Umika Loha", des: "Cardiology", par: "Curabitur luctus eleifend odio. Phasellus placerat mi." },
-            { img: "../assets/img/doctors/doctors-4.jpg", name: "Daimy Smith", des: "Neurosurgeon", par: "Morbi vulputate, tortor nec pellentesque molestie, eros nisi ornare purus." }
-        ]
+    const [Doctors, setDoctors] = useState([])
+
+    const promies = fetch('https://go-apod.herokuapp.com/apod')
+   
     return (
         <div>
             <section id="doctors" className="doctors">
@@ -19,7 +16,7 @@ const doctors = () => {
                             tincidunt viverra erat. Quisque in lectus id nulla viverra sodales in a risus. Aliquam ut sem ex. Duis viverra
                             ipsum lacus, ut pharetra arcu sagittis nec. Phasellus a eleifend elit.</p>
                     </div>
-                    {doctor.map((i) => {
+                    {Doctors.map((i) => {
                         return (
                             <div className="row">
                                 <div className="col-lg-6">
@@ -47,4 +44,4 @@ const doctors = () => {
     )
 }
 
-export default doctors
+export default Doctors

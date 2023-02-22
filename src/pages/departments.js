@@ -84,7 +84,7 @@ const Departments = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {MedicineList.map((i) => {
+                            {MedicineList?.map((i) => {
                                 return (
                                     <tr>
                                         <td>{i.id}</td>
@@ -93,8 +93,7 @@ const Departments = () => {
                                         <td>{i.quantity}</td>
                                         <td>
                                             <button className='btn btn-success me-3' onClick={() => onclickEdit(i)}>Edit</button>
-                                            <button className='btn btn-danger' onClick={() => onclikdelete(i.id)}>Delete</button>
-                                        </td>
+                                            <button className='btn btn-danger' onClick={() => onclikdelete(i.id)}>Delete</button>                                        </td>
                                     </tr>
                                 )
                             })}

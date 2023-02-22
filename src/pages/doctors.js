@@ -2,9 +2,9 @@ import React from 'react'
 
 const Doctors = () => {
 
-    const [Doctors, setDoctors] = useState([])
+    // const [Doctors, setDoctors] = useState([])
 
-    const promies = fetch('https://go-apod.herokuapp.com/apod')
+    // const promies = fetch('https://go-apod.herokuapp.com/apod')
    
     return (
         <div>

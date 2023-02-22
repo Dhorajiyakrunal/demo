@@ -12,6 +12,7 @@ import Form from "./pages/doctorsForm";
 import Register from "./pages/register"
 import Privaterouter from './utils/Privaterouter'
 import UpdateaMedicine from'./pages/UpdateaMedicine'
+import Adminrouter from './utils/Adminrouter'
 
 
 const App = () => {
@@ -19,10 +20,10 @@ const App = () => {
     <div>
       <Routes>
         <Route path='/' element={<Layout><Home /></Layout>} />
-        <Route path='/department' element={<Privaterouter><Layout><Department /></Layout></Privaterouter>} />
+        <Route path='/department' element={<Adminrouter><Layout><Department /></Layout></Adminrouter>} />
         <Route path='/doctors' element={<Layout><Doctors/></Layout>} />
         <Route path='/about' element={<Layout><About /></Layout>} />
-        <Route path='/contact' element={<Privaterouter><Layout><Contact /></Layout></Privaterouter>} />
+        <Route path='/contact' element={<Adminrouter><Layout><Contact /></Layout></Adminrouter>} />
         <Route path='/updateamedicine' element={<Privaterouter><Layout><UpdateaMedicine /></Layout></Privaterouter>} />
         <Route path='/appointment' element={<Layout><Appointment /></Layout>} />
         <Route path='/login' element={<Login/>}/>

@@ -8,6 +8,8 @@ import Modal from 'react-bootstrap/Modal';
 const Addmedicin = ({display1,setdisplay1}) => {
     const handleClose = () => setdisplay1(false);
 
+    
+
     const onSubmithandler = (event) => {
 
         event.preventDefault()

@@ -2,7 +2,7 @@ import React from 'react'
 import { Field, Formik, Form, ErrorMessage, touched } from 'formik';
 import * as yup from 'yup';
 import { Link } from 'react-router-dom'
-import {  useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import '../App.css'
 
 function Login() {
@@ -23,12 +23,18 @@ function Login() {
                     <div className="section-title">
                         <h2>Login page</h2>
                     </div>
-                    <Formik 
+                    <Formik
                         initialValues={{ email: '', password: '' }}
                         onSubmit={(values) => {
-                            localStorage.setItem('admin', JSON.stringify(values))
-                            alert(JSON.stringify(values, null, 2));
+                            let user = values;
+                            console.log("Values ++",values);
+                            if (values.email === 'admin@gmail.com') {
+                                alert(JSON.stringify(values, null, 2));
+                                user = { ...values, role: 'admin' }
+                            }
+                            localStorage.setItem('admin', JSON.stringify(user))
                             Navigate("/")
+                            
                         }}
                         validationSchema={schema}
                     >

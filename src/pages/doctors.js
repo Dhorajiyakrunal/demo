@@ -1,11 +1,13 @@
 import React from 'react'
+import Data from './Data.json'
 
 const Doctors = () => {
 
-    // const [Doctors, setDoctors] = useState([])
+    const data = Data
 
-    // const promies = fetch('https://go-apod.herokuapp.com/apod')
-   
+
+
+
     return (
         <div>
             <section id="doctors" className="doctors">
@@ -16,16 +18,18 @@ const Doctors = () => {
                             tincidunt viverra erat. Quisque in lectus id nulla viverra sodales in a risus. Aliquam ut sem ex. Duis viverra
                             ipsum lacus, ut pharetra arcu sagittis nec. Phasellus a eleifend elit.</p>
                     </div>
-                    {Doctors.map((i) => {
-                        return (
-                            <div className="row">
-                                <div className="col-lg-6">
-                                    <div className="member d-flex align-items-start">
-                                        <div className="pic"><img src={i.img} className="img-doctor" alt /></div>
+                    <div className="row d-flex">
+                        {data.map((i) => {
+                            return (
+                                <div className="col-6 ">
+                                    <div className="member ">
+                                        {/* <div className="pic"> */}
+                                            <img src={i.thumbnail} width='100px' height='100px' />
+                                        {/* </div> */}
                                         <div className="member-info">
-                                            <h4>{i.name}</h4>
-                                            <span>{i.des}</span>
-                                            <p>{i.par}</p>
+                                            <h4>{i.title}</h4>
+                                            <span>{i.description}</span>
+                                            <p>{i.category}</p>
                                             <div className="social">
                                                 <a href><i className="ri-twitter-fill" /></a>
                                                 <a href><i className="ri-facebook-fill" /></a>
@@ -35,9 +39,9 @@ const Doctors = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        )
-                    })}
+                            )
+                        })}
+                    </div>
                 </div>
             </section>
         </div>

@@ -2,9 +2,8 @@ import React from 'react'
 
 const Contect = () => {
 
-    const onSubmithandle=(event)=>{
-        console.log("run ",event.target.value);
-    }
+
+
     return (
         <div>
             <section id="contact" className="contact">
@@ -58,7 +57,7 @@ const Contect = () => {
                                     <div className="error-message" />
                                     <div className="sent-message">Your message has been sent. Thank you!</div>
                                 </div>
-                                <div className="text-center"><button onSubmit={onSubmithandle} type="submit">Send Message</button></div>
+                                <div className="text-center"><button  type="submit">Send Message</button></div>
                             </form>
                         </div>
                     </div>

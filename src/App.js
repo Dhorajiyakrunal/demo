@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from './pages/home'
 import Department from './pages/Departments'
 import Doctors from './pages/doctors'
 import About from './pages/about'
 import Contact from './pages/contect'
-import Appointment from './pages/appointment'
+import Appointment from './pages/AddAppointment'
 import Login from './pages/login'
 import Layout from './component/layout'
 import Form from "./pages/doctorsForm";
@@ -13,6 +13,7 @@ import Register from "./pages/register"
 import Privaterouter from './utils/Privaterouter'
 import UpdateaMedicine from'./pages/UpdateaMedicine'
 import Adminrouter from './utils/Adminrouter'
+import Listappointment from './pages/Listappointment'
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/contact' element={<Adminrouter><Layout><Contact /></Layout></Adminrouter>} />
         <Route path='/updateamedicine' element={<Privaterouter><Layout><UpdateaMedicine /></Layout></Privaterouter>} />
         <Route path='/appointment' element={<Layout><Appointment /></Layout>} />
+        <Route path='/listappointment' element={<Layout><Listappointment/></Layout>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/dform' element={<Form/>}/>
         <Route path='/register' element={<Register/>}/>

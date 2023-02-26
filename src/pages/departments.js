@@ -84,7 +84,7 @@ const Departments = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {MedicineList?.map((i) => {
+                            {MedicineList.map((i) => {
                                 return (
                                     <tr>
                                         <td>{i.id}</td>

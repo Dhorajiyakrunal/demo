@@ -9,6 +9,18 @@ function Header() {
     const location = useLocation();
     const navigate = useNavigate();
 
+    // const [isAdmin, setisAdmin] = useState(false)
+
+    // useEffect(() => {
+
+    //     if (JSON.parse(localStorage.getItem('admin')).role !== 'admin') {
+    //         setisAdmin(true)
+    //     } else {
+    //         setisAdmin(false)
+    //     }
+
+    // }, [])
+
     useEffect(() => {
         if (!localStorage.getItem('user')) {
             setisLogin(true)
@@ -21,6 +33,7 @@ function Header() {
     const onclickLogout = () => {
         localStorage.removeItem('admin')
     }
+
 
 
     return (
@@ -57,18 +70,22 @@ function Header() {
                         </ul>
                         <i className="bi bi-list mobile-nav-toggle" />
                     </nav>
-                    <Link to="/appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an </span>
-                        Appointment</Link>
-                    {isLogin === false ?
-                        <Link to="/login" className="appointment-btn scrollto">
-                            <span className="d-none d-md-inline">Login/ Signup</span>
-                        </Link> :
+                    {/* {isAdmin === true ? */}
+                        <Link to="/appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an </span> Appointment</Link> 
+                        {/* : */}
+                        <Link to="/listappointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">List</span>Appointment</Link>
+                    {/* } */}
+                    {isLogin === true ?
                         <Link onClick={onclickLogout} to="/login" className="appointment-btn scrollto">
                             <span className="d-none d-md-inline">Logout</span>
-                        </Link>}
-                    <Link to="/dform" className="d-flex justify-content-between appointment-btn scrollto">
+                        </Link> :
+                        <Link to="/login" className="appointment-btn scrollto">
+                            <span className="d-none d-md-inline">Login/ Signup</span>
+                        </Link>
+                    }
+                    {/* <Link to="/dform" className="d-flex justify-content-between appointment-btn scrollto">
                         <span className="d-none d-md-inline">Doctors Application</span>
-                    </Link>
+                    </Link> */}
                 </div>
             </header>
         </div></div>

@@ -14,6 +14,7 @@ import Privaterouter from './utils/Privaterouter'
 import UpdateaMedicine from'./pages/UpdateaMedicine'
 import Adminrouter from './utils/Adminrouter'
 import Listappointment from './pages/Listappointment'
+import Doctormain from './pages/Doctormain'
 
 
 const App = () => {
@@ -23,11 +24,12 @@ const App = () => {
         <Route path='/' element={<Layout><Home /></Layout>} />
         <Route path='/department' element={<Adminrouter><Layout><Department /></Layout></Adminrouter>} />
         <Route path='/doctors' element={<Layout><Doctors/></Layout>} />
+        <Route path='/maindoctors/:id' element={<Layout><Doctormain/></Layout>} />
         <Route path='/about' element={<Layout><About /></Layout>} />
         <Route path='/contact' element={<Adminrouter><Layout><Contact /></Layout></Adminrouter>} />
         <Route path='/updateamedicine' element={<Privaterouter><Layout><UpdateaMedicine /></Layout></Privaterouter>} />
         <Route path='/appointment' element={<Layout><Appointment /></Layout>} />
-        <Route path='/listappointment' element={<Layout><Listappointment/></Layout>}/>
+        <Route path='/listappointment' element={<Adminrouter><Layout><Listappointment/></Layout></Adminrouter>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/dform' element={<Form/>}/>
         <Route path='/register' element={<Register/>}/>

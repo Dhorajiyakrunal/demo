@@ -12,6 +12,7 @@ const Departments = () => {
     const [SelectedData, setSelectedData] = useState([])
     const [Sorting, setSorting] = useState([])
 
+        
     const onClickHandler = () => {
         setdisplay(true)
     }
@@ -93,7 +94,8 @@ const Departments = () => {
                                         <td>{i.quantity}</td>
                                         <td>
                                             <button className='btn btn-success me-3' onClick={() => onclickEdit(i)}>Edit</button>
-                                            <button className='btn btn-danger' onClick={() => onclikdelete(i.id)}>Delete</button>                                        </td>
+                                            <button className='btn btn-danger' onClick={() => onclikdelete(i.id)}>Delete</button>       
+                                         </td>
                                     </tr>
                                 )
                             })}

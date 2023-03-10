@@ -29,7 +29,7 @@ function Login() {
                             let user = values;
                             console.log("Values ++",values);
                             if (values.email === 'admin@gmail.com') {
-                                alert(JSON.stringify(values, null, 2));
+                                console.log(JSON.stringify(values, null, 2));
                                 user = { ...values, role: 'admin' }
                             }
                             localStorage.setItem('admin', JSON.stringify(user))

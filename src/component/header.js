@@ -9,17 +9,17 @@ function Header() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // const [isAdmin, setisAdmin] = useState(false)
+    const [isAdmin, setisAdmin] = useState(false)
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     if (JSON.parse(localStorage.getItem('admin')).role !== 'admin') {
-    //         setisAdmin(true)
-    //     } else {
-    //         setisAdmin(false)
-    //     }
+        if (JSON.parse(localStorage.getItem('admin')).role !== 'admin') {
+            setisAdmin(true)
+        } else {
+            setisAdmin(false)
+        }
 
-    // }, [])
+    }, [])
 
     useEffect(() => {
         if (!localStorage.getItem('user')) {
@@ -28,6 +28,7 @@ function Header() {
         else {
             setisLogin(false)
         }
+        
     }, [location])
 
     const onclickLogout = () => {
@@ -70,11 +71,11 @@ function Header() {
                         </ul>
                         <i className="bi bi-list mobile-nav-toggle" />
                     </nav>
-                    {/* {isAdmin === true ? */}
-                        <Link to="/appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an </span> Appointment</Link> 
-                        {/* : */}
+                    {isAdmin === true ?
+                        <Link to="/appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an </span> Appointment</Link>
+                        :
                         <Link to="/listappointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">List</span>Appointment</Link>
-                    {/* } */}
+                    }
                     {isLogin === true ?
                         <Link onClick={onclickLogout} to="/login" className="appointment-btn scrollto">
                             <span className="d-none d-md-inline">Logout</span>

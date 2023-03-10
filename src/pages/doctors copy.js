@@ -20,9 +20,6 @@ const Doctors = () => {
         navigate(`/maindoctors/${data}`)
     }
 
-
-
-
     return (
         <div>
             <section id="doctors" className="doctors">

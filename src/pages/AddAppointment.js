@@ -1,13 +1,7 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { Appaction } from '../Redux/Action/Appoinment.action';
-
 
 function AddAppointment() {
-
-    const dispatch = useDispatch();
-
-
+    
     const onSubmitHandler = (event) => {
 
         event.preventDefault()
@@ -19,17 +13,15 @@ function AddAppointment() {
             message: event.target.message.value,
         }
 
-        console.log("pDATA", pdata);
-        // if (localStorage.getItem('PatientData')) {
-        //     const padata = JSON.parse(localStorage.getItem('PatientData'))
-        //     padata.push(pdata)
-        //     localStorage.setItem('PatientData', JSON.stringify(padata))
-        // }
-        // else {
-        //     const Patientarray = JSON.stringify([pdata])
-        //     localStorage.setItem('PatientData', Patientarray)
-        // }
-        dispatch({type:'APPACTION',payload:pdata})
+        if (localStorage.getItem('PatientData')) { 
+            const padata = JSON.parse(localStorage.getItem('PatientData'))
+            padata.push(pdata)
+            localStorage.setItem('PatientData', JSON.stringify(padata))
+        }
+        else {
+            const Patientarray = JSON.stringify([pdata])
+            localStorage.setItem('PatientData', Patientarray)
+        }
     }
 
 

@@ -1,19 +1,14 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table';
-import { useSelector } from 'react-redux';
 
 
 const Listappointment = () => {
 
-    // const [Ptdata, setPtdata] = React.useState([])
+    const [Ptdata, setPtdata] = React.useState([])
 
-    const data = useSelector((data) => data.AppoinmentReducer.Appdata)
-
-    console.log('data',data);
-
-    // React.useEffect(() => {
-    //     setPtdata(JSON.parse(localStorage.getItem('PatientData')) || [])
-    // }, [])
+    React.useEffect(() => {
+        setPtdata(JSON.parse(localStorage.getItem('PatientData')) || [])
+    }, [])
 
 
 
@@ -29,7 +24,7 @@ const Listappointment = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data?.map((i) => {
+                    {Ptdata?.map((i) => {
                         return (
                             <tr>
                                 <td>{i.name}</td>

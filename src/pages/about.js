@@ -10,11 +10,6 @@ import '../App.css'
 
 const About = () => {
 
-  const Data = data
-  console.log('data', Data);
-
-
-
   const columns = [
     {
       dataField: 'id',
@@ -23,7 +18,13 @@ const About = () => {
       filter: textFilter()
     },
     {
-      dataField: 'name',
+      dataField: 'title',
+      text: 'Name',
+      filter: textFilter()
+
+    },
+    {
+      dataField: 'de',
       text: 'Name',
       filter: textFilter()
 
@@ -54,7 +55,7 @@ const About = () => {
           <div className="row">
             <div className="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center px-lg-5 abouttop">
               <h3>Table</h3>
-              <BootstrapTable keyField='id' data={Data} columns={columns} filter={filterFactory()}  pagination={ paginationFactory()} /> 
+              <BootstrapTable keyField='id' data={data} columns={columns} filter={filterFactory()}  pagination={ paginationFactory()} /> 
             </div>
           </div>
         </div>
